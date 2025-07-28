@@ -662,7 +662,7 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         pyright = {},
-        cmake = {},
+        neocmake = {},
         css_variables = {},
         cssls = {},
         cssmodules_ls = {},
