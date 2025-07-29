@@ -101,17 +101,18 @@ vim.g.have_nerd_font = true
 --:set tabstop=4
 --:set shiftwidth=4
 --:set expandtab
-vim.opt.tabstop = 4
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.colorcolumn = '80'
+vim.o.tabstop = 4
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.colorcolumn = '80'
 -- Make line numbers default
 vim.o.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
 -- vim.o.relativenumber = true
 vim.o.relativenumber = true
-
+vim.o.spell = true
+vim.o.spelllang = 'en_us'
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.o.mouse = 'a'
 
