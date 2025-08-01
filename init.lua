@@ -225,7 +225,7 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
--- NOTE: My changes are here
+-- NOTE: My config changes
 vim.g.have_nerd_font = true
 vim.o.tabstop = 4
 vim.o.expandtab = true
@@ -248,6 +248,34 @@ vim.o.spelllang = 'en_us'
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  -- NOTE: My plugins
+  {
+    'tinted-theming/tinted-vim',
+    priority = 1001,
+    config = function()
+      vim.g.tinted_colorspace = 256
+    end,
+  },
+  {
+    'bluz71/vim-moonfly-colors',
+    name = 'moonfly',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'moonfly'
+    end,
+  },
+  {
+    'derektata/lorem.nvim',
+    config = function()
+      require('lorem').opts {
+        sentence_length = 'mixed', -- using a default configuration
+        comma_chance = 0.3, -- 30% chance to insert a comma
+        max_commas = 2, -- maximum 2 commas per sentence
+        debounce_ms = 200, -- default debounce time in milliseconds
+      }
+    end,
+  },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
@@ -870,14 +898,6 @@ require('lazy').setup({
       -- Shows a signature help window while you type arguments for a function
       signature = { enabled = true },
     },
-  },
-  {
-    'tinted-theming/tinted-vim',
-    priority = 1000,
-    config = function()
-      vim.g.tinted_colorspace = 256
-      vim.cmd.colorscheme 'base16-windows-95'
-    end,
   },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
